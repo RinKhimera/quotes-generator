@@ -3,7 +3,10 @@ import React from "react";
 import { BsTwitter } from "react-icons/bs";
 
 class Quotes extends React.Component {
-  state = { advice: "" };
+  constructor(props: any) {
+    super(props);
+    this.state = { advice: "" };
+  }
 
   componentDidMount() {
     this.fetchAdvice();
@@ -14,7 +17,7 @@ class Quotes extends React.Component {
       .get("https://api.adviceslip.com/advice")
       .then((response) => {
         const { advice } = response.data.slip;
-        this.setState({ advice: advice });
+        this.setState({ advice });
       })
       .catch((error) => {
         console.log(error);
@@ -45,8 +48,9 @@ class Quotes extends React.Component {
           <button
             id="new-quote"
             className="text-xl text-white bg-pink-500 p-2 rounded-lg font-semibold"
+            onClick={this.fetchAdvice}
           >
-            <a href="#">New Quote</a>
+            New Quote
           </button>
         </div>
       </div>
