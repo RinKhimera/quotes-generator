@@ -25,13 +25,15 @@ class Quotes extends React.Component {
   }
 
   render() {
+    const { advice }: any = this.state;
+    this.fetchAdvice = this.fetchAdvice.bind(this);
     return (
       <div
         id="quote-box"
         className=" bg-white flex-row w-10/12 m-auto p-20 rounded-lg "
       >
         <div id="text" className=" text-3xl">
-          <p>{this.state.advice}</p>
+          <p>{advice}</p>
         </div>
         <div id="author" className="flex justify-end text-2xl py-5">
           <p className=" font-medium ">Rin Khimera</p>
