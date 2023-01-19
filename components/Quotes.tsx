@@ -1,6 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { BsTwitter } from "react-icons/bs";
+import { FaQuoteLeft } from "react-icons/fa";
+import { FaQuoteRight } from "react-icons/fa";
 
 class Quotes extends React.Component {
   constructor(props: any) {
@@ -27,21 +29,31 @@ class Quotes extends React.Component {
   render() {
     const { advice }: any = this.state;
     this.fetchAdvice = this.fetchAdvice.bind(this);
+
     return (
       <div
         id="quote-box"
-        className=" bg-white flex-row w-10/12 m-auto p-20 rounded-lg "
+        className=" bg-white flex-row w-10/12 m-auto p-20 rounded-lg md:w-1/2 "
       >
-        <div id="text" className=" text-3xl">
+        <div className=" text-3xl pb-3 flex justify-start">
+          <FaQuoteLeft />
+        </div>
+        <div
+          id="text"
+          className="px-10 text-center text-2xl md:text-3xl lg:text-4xl"
+        >
           <p>{advice}</p>
         </div>
-        <div id="author" className="flex justify-end text-2xl py-5">
+        <div className=" text-3xl pt-3 flex justify-end">
+          <FaQuoteRight />
+        </div>
+        <div id="author" className="flex justify-end py-5 text-xl md:text-2xl ">
           <p className=" font-medium ">Rin Khimera</p>
         </div>
         <div className="flex justify-between ">
           <button
             id="tweet-quote"
-            className="text-3xl text-white bg-pink-500 p-2 rounded"
+            className="text-3xl text-white bg-pink-400 p-2 rounded"
           >
             <a href="#">
               <BsTwitter />
@@ -49,7 +61,7 @@ class Quotes extends React.Component {
           </button>
           <button
             id="new-quote"
-            className="text-xl text-white bg-pink-500 p-2 rounded-lg font-semibold"
+            className="text-xl text-white bg-pink-400 p-2 rounded-lg font-semibold"
             onClick={this.fetchAdvice}
           >
             New Quote
