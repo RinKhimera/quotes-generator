@@ -53,7 +53,7 @@ class Quotes extends React.Component {
         <div className="flex justify-between ">
           <button
             id="tweet-quote"
-            className="text-3xl text-white bg-pink-500 p-2 rounded"
+            className="text-3xl text-white bg-orange-400 p-2 rounded lg:bg-pink-500"
           >
             <a
               target="_blank"
@@ -65,7 +65,7 @@ class Quotes extends React.Component {
           </button>
           <button
             id="new-quote"
-            className="text-xl text-white bg-pink-500 p-2 rounded-lg font-semibold"
+            className="text-xl text-white bg-orange-400 p-2 rounded-lg font-semibold lg:bg-pink-500"
             onClick={this.fetchAdvice}
           >
             New Quote
