@@ -47,15 +47,19 @@ class Quotes extends React.Component {
         <div className=" text-3xl pt-3 flex justify-end">
           <FaQuoteRight />
         </div>
-        <div id="author" className="flex justify-end py-5 text-xl md:text-2xl ">
-          <p className=" font-medium ">Rin Khimera</p>
+        <div id="author" className="flex justify-end py-5 text-lg md:text-xl ">
+          <p className=" font-medium ">© 2023 Rin Khimera</p>
         </div>
         <div className="flex justify-between ">
           <button
             id="tweet-quote"
             className="text-3xl text-white bg-pink-400 p-2 rounded"
           >
-            <a href="#">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/intent/tweet"
+            >
               <BsTwitter />
             </a>
           </button>
